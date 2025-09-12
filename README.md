@@ -603,7 +603,75 @@ By applying **different techniques**, we shape the **style, depth, and usefulnes
 | Instruction-based | Structure & clarity | Bullet lists | Customer support |
 | Persona-based | Engagement | Fun, styled | Marketing/social bot |
 
+## 4.7 Tree-of-Thought Prompting (ToT)
 
+**Definition:** Instead of following one reasoning path, the AI explores multiple possible reasoning paths (“branches”) before deciding the final answer.  
+**Problem Solved:** Reduces mistakes by letting the AI compare options and select the most accurate solution.  
+
+**Example**
+
+| **Prompt** | **Response** |
+|------------|--------------|
+| Solve this problem: A person buys a pen for $5 and sells it for $7. Then buys another for $6 and sells it for $8. What is the total profit? | (Branch 1) First pen profit = $2. Second pen profit = $2. Total = $4 ✅ <br> (Branch 2) Miscalculated as $2 ❌ <br> **Final Answer → $4 ✅** |
+
+**Best Use Case:**  
+- Complex math or logic problems  
+- Multi-step reasoning tasks  
+- Scenarios with multiple possible solutions  
+
+---
+
+## 4.8 ReAct Prompting (Reason + Act)
+
+**Definition:** Combines **reasoning with actions**. The model thinks step by step, then decides whether to act (e.g., call an external tool or API).  
+**Problem Solved:** Prevents hallucination by grounding responses in **real data**.  
+
+**Example**
+
+| **Prompt** | **Response** |
+|------------|--------------|
+| Find today’s weather in New York. | **Reason:** I cannot guess the weather. <br> **Action:** Call Weather API → “Today’s weather in New York is 20°C, partly cloudy.” ✅ |
+
+**Best Use Case:**  
+- Chatbots connected to APIs  
+- Assistants retrieving real-time data  
+- Task automation (e.g., booking, calculations, database queries)  
+
+---
+
+## 4.9 Step-Back Prompting
+
+**Definition:** Asks the AI to **step back** and think about the general principle first before answering the specific question.  
+**Problem Solved:** Avoids narrow or biased responses and encourages **structured, principle-based answers**.  
+
+**Example**
+
+| **Prompt** | **Response** |
+|------------|--------------|
+| What’s the best way to invest money? | **Step Back:** The best way depends on risk tolerance and goals. <br> **Answer:** For low risk → savings bonds. For medium → index funds. For high → startups. ✅ |
+
+**Best Use Case:**  
+- Financial advice bots  
+- Ethical or sensitive decision-making  
+- Academic or philosophical discussions  
+
+---
+
+## 4.10 Contextual Prompting
+
+**Definition:** Embeds **audience, medium, or situation context** inside the prompt.  
+**Problem Solved:** Makes responses more **relevant, personalized, and audience-appropriate**.  
+
+**Example**
+
+| **Prompt** | **Response** |
+|------------|--------------|
+| Explain climate change to a 10-year-old in a bedtime story style. | “Once upon a time, the Earth wore a big warm blanket. The blanket kept getting thicker, making Earth too hot. So the animals and people had to work together to keep the Earth cool again.” ✅ |
+
+**Best Use Case:**  
+- Teaching children (simplified tone)  
+- Marketing copy (targeted audiences)  
+- Storytelling chatbots (customized by audience)  
 ---
 
 # 🌍 Real-Life Examples
