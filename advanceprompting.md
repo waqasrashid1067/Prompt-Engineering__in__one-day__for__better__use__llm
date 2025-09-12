@@ -79,12 +79,7 @@ System role prompt (Guardrail):
 
 ## 🛡️ Prompt Injection Attack (Diagram)
 
-```mermaid
-flowchart TD
-    U[User Input] -->|Injected Instructions| M[LLM Model]
-    M -->|Unsafe Output| A[Attacker Controlled Response]
-    U2[Safe Input] --> M2[LLM Model (Guardrails)]
-    M2 -->|Safe Output| R[Correct Response]
+
 🚨 Jailbreaking Large Language Models
 Definition: Jailbreaking bypasses rules, safeguards, and alignment mechanisms, convincing the model to comply with disallowed requests.
 
