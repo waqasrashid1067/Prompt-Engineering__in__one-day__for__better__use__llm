@@ -53,7 +53,7 @@ It defines:
 
 <!-- Figure 1 -->
 <p align="center">
-  <img src="./readme_images/figure_1.png" alt="Figure 1: LLM response Prompts" width="700" />
+  <img src="./readme_img/figure_1.png" alt="Figure 1: LLM response Prompts" width="700" />
   <br/>
   <em>Figure 1: LLM response Prompts</em>
 </p>
@@ -296,19 +296,9 @@ These affect **accuracy, safety, and reliability** of responses.
 
 ---
 
-<!-- Figure 2 -->
-<p align="center">
-  <img src="./readme_images/figure_2.png" alt="Figure 2: Frequency penalty" width="700" />
-  <br/>
-  <em>Figure 2: Frequency penalty</em>
-</p>
 
-<!-- Figure 3 -->
-<p align="center">
-  <img src="./readme_images/figure_3.png" alt="Figure 3: Presence penalty" width="700" />
-  <br/>
-  <em>Figure 3: Presence penalty</em>
-</p>
+
+
 # Chapter 3: Parameters that Control Responses
 
 Large Language Models (LLMs) don’t always respond the same way to the same prompt.  
@@ -333,7 +323,18 @@ Their **parameters** act like *settings on a machine* — they control **style, 
 |------------|-----------------|--------------|
 | Write a tagline for a coffee shop. | 0.2 (Low) | Fresh coffee, served daily. ✅ Safe |
 | Write a tagline for a coffee shop. | 0.9 (High) | Awaken your dreams, one cup at a time! 🎨 Creative |
-
+<!-- Figure 2 -->
+<p align="center">
+  <img src="./readme_img/figure_2.png" alt="Figure 2: Temperature " width="700" />
+  <br/>
+  <em>Figure 2: Frequency penalty</em>
+</p>
+<!-- Figure 3 -->
+<p align="center">
+  <img src="./readme_img/figure_3.png" alt="Figure 3: Temperature 1" width="700" />
+  <br/>
+  <em>Figure 3: Presence penalty</em>
+</p>
 ---
 
 ## 3.2 Top-k Sampling
@@ -349,7 +350,12 @@ Their **parameters** act like *settings on a machine* — they control **style, 
 |------------|-----------|--------------|
 | Suggest a snack with tea. | k = 1 | Biscuits 🍪 |
 | Suggest a snack with tea. | k = 10 | Biscuits, cake, cookies, samosas, muffins, chips… |
-
+<!-- Figure 4 -->
+<p align="center">
+  <img src="./readme_img/figure_4.png" alt="Figure 4: Top-K" width="900" />
+  <br/>
+  <em>Figure 4: Comparison between parameters</em>
+</p>
 ---
 
 ## 3.3 Top-p (Nucleus Sampling)
@@ -365,6 +371,15 @@ Their **parameters** act like *settings on a machine* — they control **style, 
 |------------|-----------|--------------|
 | Suggest a weekend activity. | p = 0.2 | Reading a book at home 📖 |
 | Suggest a weekend activity. | p = 0.9 | Reading, hiking, movies, cafes, road trips 🚗 |
+
+
+<!-- Figure 5 -->
+<p align="center">
+  <img src="./readme_img/figure_5.png" alt="Figure 5: top-p" width="800" />
+  <br/>
+  <em>Figure 5: Prompt chaining and advanced prompting flow</em>
+</p>
+
 
 ---
 
@@ -414,6 +429,24 @@ Adjusted probability = initial probability / (1 + presence_penalty * presence)
 | Write a short poem about the moon. | No penalties | The moon shines bright, the moon in the night, the moon in my sight. ❌ (repetitive) |
 | Write a short poem about the moon. | With penalties | Moonlight paints the sky, whispering silver dreams across the sea. ✅ (varied) |
 
+
+<!-- Figure 6 -->
+<p align="center">
+  <img src="./readme_img/figure_6.png" alt="Figure 6: Frequency penalty" width="800" />
+  <br/>
+  <em>Figure 6: Educational chatbot reasoning flow</em>
+</p>
+
+
+<!-- Figure 7 -->
+<p align="center">
+  <img src="./readme_img/figure_7.png" alt="Figure 7: presence penalty" width="800" />
+  <br/>
+  <em>Figure 7: Prompting Cheat Sheet</em>
+</p>
+
+
+
 ---
 
 ## Combined Settings Example
@@ -450,38 +483,25 @@ Adjusted probability = initial probability / (1 + presence_penalty * presence)
 | High Max Tokens (200+) | Detailed, in-depth | Knowledge base, Research |
 | High Frequency/Presence Penalty | Diverse, less repetition | Brainstorming, Creative Writing |
 
-<!-- Figure 4 -->
-<p align="center">
-  <img src="./readme_images/figure_4.png" alt="Figure 4: Comparison between parameters" width="900" />
-  <br/>
-  <em>Figure 4: Comparison between parameters</em>
-</p>
+
 
 ---
 
 ## 📊 Visualization – Parameters at a Glance
 
-```mermaid
-flowchart LR
-    A[Prompt] --> B{Parameters}
-    B --> C[Temperature<br>Randomness/Creativity]
-    B --> D[Top-k<br>Word Choices]
-    B --> E[Top-p<br>Probability Mass]
-    B --> F[Max Tokens<br>Response Length]
-    B --> G[Stop Sequences<br>Where to End]
-    B --> H[Penalties<br>Repetition & Novelty]
 
-    C --> C1[Low = Predictable]
-    C --> C2[High = Creative]
 
-    D --> D1[Low k = Focused]
-    D --> D2[High k = Diverse]
+<!-- Figure: Parameters diagram -->
+<p align="center">
+  <img src="./readme_img/parameters_diagram.png" alt="Parameters diagram: Temperature, Top-k, Top-p, Max Tokens, Stop Sequences, Penalties" width="900" style="max-width:100%;height:auto;" />
+  <br/>
+  <em>Figure: Parameters that control LLM responses — examples + best-practice use cases.</em>
+  <br/>
+  <a href="./readme_img/parameters_diagram.png" download>Download full-size PNG</a>
+</p>
 
-    E --> E1[Low p = Safe]
-    E --> E2[High p = Varied]
 
-    H --> H1[Frequency Penalty = Avoid repetition]
-    H --> H2[Presence Penalty = Encourage new ideas]
+
 # Chapter 4: Prompting Techniques
 
 Prompting techniques are the **strategies** we use to communicate with AI.  
@@ -583,12 +603,6 @@ By applying **different techniques**, we shape the **style, depth, and usefulnes
 | Instruction-based | Structure & clarity | Bullet lists | Customer support |
 | Persona-based | Engagement | Fun, styled | Marketing/social bot |
 
-<!-- Figure 5 -->
-<p align="center">
-  <img src="./readme_images/figure_5.png" alt="Figure 5: Prompt chaining and advanced flow" width="800" />
-  <br/>
-  <em>Figure 5: Prompt chaining and advanced prompting flow</em>
-</p>
 
 ---
 
@@ -617,12 +631,7 @@ A student asks:
 
 👉 **Best Technique:** Chain-of-Thought  
 
-<!-- Figure 6 -->
-<p align="center">
-  <img src="./readme_images/figure_6.png" alt="Figure 6: Educational chatbot reasoning flow" width="800" />
-  <br/>
-  <em>Figure 6: Educational chatbot reasoning flow</em>
-</p>
+
 
 ---
 
@@ -685,11 +694,5 @@ Customer: *“I bought a product yesterday but it’s not working. Can I get a r
 👉 *If your prompt feels unclear, ask yourself:*  
 **Did I set the Role, Task, Process, and Context?** ✅
 
-<!-- Figure 7 -->
-<p align="center">
-  <img src="./readme_images/figure_7.png" alt="Figure 7: Prompting Cheat Sheet" width="800" />
-  <br/>
-  <em>Figure 7: Prompting Cheat Sheet</em>
-</p>
 
 ⚡ **Prompt Engineering = Smart management of your AI “employee.”**  
